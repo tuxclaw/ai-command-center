@@ -30,7 +30,9 @@ export default function ModelSelector({ selectedModel, onSelect }: Props) {
           onSelect(m[0].name);
         }
       }
-    } catch { /* ignore */ }
+    } catch (err) {
+      console.error('Failed to load models:', err);
+    }
     setLoading(false);
   }
 
